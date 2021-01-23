@@ -1,7 +1,7 @@
 ## Installation
 
 1. Install [NodeJS](https://nodejs.org/en/download/) (v10+), globally. This will also install `npm`.
-2. Navigate to `microex-styles` in your project and run `npm install`. 
+2. Navigate to `ui-starterkit` in your project and run `npm install`. 
 
 ## Usage
 
@@ -14,7 +14,7 @@ The following npm scripts drive the UI workflow:
 
 ### General
 
-The project module compiles the code under the `microex-styles/src` folder and outputs the compiled CSS and JS, and any resources beneath a folder named `microex-styles/dist`.
+The project module compiles the code under the `ui-starterkit/src` folder and outputs the compiled CSS and JS, and any resources beneath a folder named `ui-starterkit/dist`.
 
 
 ### CSS
