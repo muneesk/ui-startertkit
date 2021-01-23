@@ -1,0 +1,64 @@
+{
+  "name": "microex-styles",
+  "version": "1.0.0",
+  "description": "microex styles",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "private": true,
+  "main": "src/main/webpack/site/main.ts",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "scripts": {
+    "dev": "webpack -d --env dev --config ./webpack.dev.js --verbose",
+    "start": "webpack-dev-server --open --config ./webpack.dev.js",
+    "prod": "webpack -p --config ./webpack.prod.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+    "acorn": "^6.1.0",
+    "autoprefixer": "^9.2.1",
+    "bootstrap": "4.4.1",
+    "browserslist": "^4.2.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.0.0",
+    "cssnano": "^4.1.10",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "3.4.1",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "popper.js": "1.16.0",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.17.2",
+    "sass-loader": "^7.1.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.14.1",
+    "terser-webpack-plugin": "^1.4.1",
+    "ts-loader": "^5.3.3",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "tslint": "^5.13.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-webpack-plugin": "^2.0.2",
+    "typescript": "^3.3.3333",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-import-glob-loader": "^1.6.3",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.6",
+    "handlebars-loader": "^1.7.1",
+    "hbs": "^4.1.1",
+    "live-server": "^1.2.1",
+    "rtlcss-webpack-plugin": "^4.0.3"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%"
+  ]
+}

@@ -1,0 +1,171 @@
+html {
+	font-family: inherit;
+}
+// Body styles
+body {
+    font-family: $font-primaryMedium;
+    font-size: rem($body-font-size);
+    font-weight: 400;
+    line-height: 1.5;
+    color: $body-text;
+    text-align: left;
+    background-color:$body-bg
+}
+
+// Heading styles
+
+h1,
+.h_1 {
+	letter-spacing:-2%;
+	@include media-size(mobile){
+		font-size: rem($h1-font-size-sm);
+		line-height: rem($h1-line-height-sm);
+
+	}
+	@include media-size(tablet) {
+		font-size: rem($h1-font-size-md);
+		line-height: rem($h1-line-height-md);
+	}
+	@include media-size(desktop) {
+		font-size: rem($h1-font-size-lg);
+		line-height: rem($h1-line-height-lg);
+		font-weight: $font-weight-bold;
+	}
+}
+
+h2,
+.h_2 {
+	letter-spacing:-2%;
+	letter-spacing: rem(2);
+	@include media-size(mobile){
+		font-size: rem($h2-font-size-sm);
+		line-height: rem($h1-line-height-sm);
+	}
+	@include media-size(tablet) {
+		font-size: rem($h2-font-size-md);
+		line-height: rem($h1-line-height-md);
+	}
+	@include media-size(desktop) {
+		font-size: rem($h2-font-size-lg);
+		line-height: rem($h2-line-height-lg);
+	}
+}
+h3,
+.h_3 {
+	letter-spacing:-1%;
+	@include media-size(mobile){
+		font-size: rem($h3-font-size-sm);
+		line-height: rem($h3-line-height-sm);
+	}
+	@include media-size(tablet) {
+		font-size: rem($h3-font-size-md);
+		line-height: rem($h3-line-height-md);
+	}
+	@include media-size(desktop) {
+		font-size: rem($h3-font-size-lg);
+		line-height: rem($h3-line-height-lg);
+	}
+}
+h4,
+.h_4 {
+	letter-spacing:-1%;
+	@include media-size(mobile){
+		font-size: rem($h4-font-size-sm);
+		line-height: rem($h4-line-height-sm);
+	}
+	@include media-size(tablet) {
+		font-size: rem($h4-font-size-md);
+		line-height: rem($h4-line-height-md);
+	}
+	@include media-size(desktop) {
+		font-size: rem($h4-font-size-lg);
+		line-height: rem($h4-line-height-lg);
+	}
+}
+
+h5,
+.h_5 {
+	@include media-size(mobile){
+		font-size: rem($h5-font-size-sm);
+		line-height: rem($h5-line-height-sm);
+	}
+	@include media-size(tablet) {
+		font-size: rem($h5-font-size-md);
+		line-height: rem($h5-line-height-md);
+	}
+	@include media-size(desktop) {
+		font-size: rem($h5-font-size-lg);
+		line-height: rem($h5-line-height-lg);
+	}
+}
+
+h6,
+.h_6 {
+	letter-spacing:1%;
+	@include media-size(mobile){
+		font-size: rem($h6-font-size-sm);
+		line-height: rem($h6-line-height-sm);
+	}
+	@include media-size(tablet) {
+		font-size: rem($h6-font-size-md);
+		line-height: rem($h6-line-height-md);
+	}
+	@include media-size(desktop) {
+		font-size: rem($h6-font-size-lg);
+		line-height: rem($h6-line-height-lg);
+	}
+}
+
+.style-1 {
+	@include paragraph-style(
+		$style1-family,
+		rem($style1-size),
+		rem($style1-line),
+		rem($style1-space)
+	)
+}
+
+.style-2 {
+	@include paragraph-style(
+		$style2-family,
+		rem($style2-size),
+		rem($style2-line),
+		rem($style2-space)
+	)
+}
+
+.style-3 {
+	@include paragraph-style(
+		$style3-family,
+		rem($style3-size),
+		rem($style3-line),
+		rem($style3-space)
+	)
+}
+
+.style-4 {
+	@include paragraph-style(
+		$style4-family,
+		rem($style4-size),
+		rem($style4-line),
+		rem($style4-space)
+	)
+}
+
+.style-5 {
+	@include paragraph-style(
+		$style5-family,
+		rem($style5-size),
+		rem($style5-line),
+		rem($style5-space)
+	)
+}
+
+.style-6 {
+	@include paragraph-style(
+		$style6-family,
+		rem($style6-size),
+		rem($style6-line),
+		rem($style6-space)
+	)
+}

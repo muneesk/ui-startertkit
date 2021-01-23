@@ -1,0 +1,323 @@
+// =============================================================================
+// HTML5 display definitions
+// =============================================================================
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    @if $legacy_support_for_ie {
+        *display: inline;
+        *zoom: 1;
+    }
+}
+
+// 1. Prevents modern browsers from displaying 'audio' without controls
+// 2. Remove excess height in iOS5 devices
+
+audio:not([controls]) {
+    display: none; // 1
+    height: 0; // 2
+}
+
+[hidden],
+template {
+    display: none;
+}
+
+// =============================================================================
+// Base
+// =============================================================================
+html {
+    @if $legacy_support_for_ie {
+        font-size: 100%; // 1
+    }
+    background: $background;
+    color: $color;
+    -webkit-text-size-adjust: 100%; // 2
+    -ms-text-size-adjust: 100%; // 2
+}
+
+// Addresses font-family inconsistency between 'textarea' and other form elements.
+html,
+button,
+input,
+select,
+textarea {
+    font-family: $inhrit_font_family;
+}
+
+a {
+    color: $mediumblue;
+
+    &:hover,
+    &:active {
+        color: $darkblue;
+        outline: 0;
+    }
+}
+
+// Addresses styling not present in IE 8/9, S5, Chrome
+bbr[title] {
+    border-bottom: 1px dotted;
+}
+
+// Addresses style set to 'bolder' in FF3+, S4/5, Chrome
+b,
+strong {
+    font-weight: bold;
+}
+
+@if $legacy_support_for_ie {
+    blockquote {
+        margin: 1em 40px;
+    }
+}
+
+// Addresses styling not present in S5, Chrome
+dfn {
+    font-style: italic;
+}
+
+// Addresses styling not present in IE6/7/8/9
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+// Addresses margins set differently in IE6/7
+@if $legacy_support_for_ie {
+    p,
+    pre {
+        margin: 1em 0;
+    }
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    @if $legacy_support_for_ie {
+        _font-family: "courier new", monospace;
+    }
+    font-size: 1em;
+}
+
+// Improves readability of pre-formatted text in all browsers
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+// Set consistent quote types.
+q {
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+@if $legacy_support_for_ie {
+    q {
+        quotes: none;
+    }
+}
+
+q {
+    &:before,
+    &:after {
+        content: "";
+        content: none;
+    }
+}
+
+// Address inconsistent and variable font size in all browsers.
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+// Addresses margins set differently in IE6/7
+@if $legacy_support_for_ie {
+    dl,
+    menu,
+    ol,
+    ul {
+        margin: 1em 0;
+    }
+}
+
+@if $legacy_support_for_ie {
+    dd {
+        margin: 0 0 0 40px;
+    }
+}
+
+// Addresses paddings set differently in IE6/7
+@if $legacy_support_for_ie {
+    menu,
+    ol,
+    ul {
+        padding: 0 0 0 40px;
+    }
+}
+
+img {
+    border: 0; // 1
+    @if $legacy_support_for_ie {
+        -ms-interpolation-mode: bicubic; // 2
+    }
+}
+
+// Corrects overflow displayed oddly in IE9
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 0;
+}
+
+// Corrects margin displayed oddly in IE6/7
+@if $legacy_support_for_ie {
+    form {
+        margin: 0;
+    }
+}
+// Define consistent border, margin, and padding
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+    white-space: normal;
+    @if $legacy_support_for_ie {
+        *margin-left: -7px;
+    }
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    @if $legacy_support_for_ie {
+        *vertical-align: middle;
+    }
+}
+
+button,
+input {
+    line-height: normal;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+html input[type="button"], // 1
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; // 2
+    cursor: pointer; // 3
+    @if $legacy_support_for_ie {
+        *overflow: visible; // 4
+    }
+}
+
+// Re-set default cursor for disabled elements
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+
+button,
+input {
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+// =============================================================================
+// Tables
+// =============================================================================
+
+// Remove most spacing between table cells
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input {
+    &[type="search"] {
+        -webkit-appearance: textfield; // 1
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box; // 2
+        box-sizing: content-box;
+
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+    }
+
+    // 1. Address box sizing set to `content-box` in IE 8/9/10.
+
+    &[type="checkbox"],
+    &[type="radio"] {
+        box-sizing: border-box; // 1
+        padding: 0; // 2
+        @if $legacy_support_for_ie {
+            *height: 13px; // 3
+            *width: 13px; // 3
+        }
+    }
+}

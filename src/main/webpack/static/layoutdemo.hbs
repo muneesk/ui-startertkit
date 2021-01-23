@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+ {{!--<html lang="en" dir="rtl"> --}}
+<head>
+  {{> partials/_header-section }}
+
+</head>
+<body class="page basicpage">
+ 
+  {{>partials/_demoheader}}
+  <!-- Root Layout Container -->
+  <div class="analytics" role="main" id="content" data-sitecurrency="" data-sitelanguage="" data-currenturl=""
+    data-sitetype="">
+    <div class="root responsivegrid">
+      {{#> body}}{{/body}}
+    </div>
+  </div>
+  <!-- Footer Scripts -->
+  {{> partials/_footer-section }}
+  <!-- INTERNAL Demo Header Sub menu -->
+  <script type="text/javascript">
+    $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
+      if (!$(this).next().hasClass('show')) {
+        $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+      }
+      var $subMenu = $(this).next('.dropdown-menu');
+      $subMenu.toggleClass('show');
+      $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+        $('.dropdown-submenu .show').removeClass('show');
+      });
+      return false;
+    });
+  </script>
+</body>
+</html>

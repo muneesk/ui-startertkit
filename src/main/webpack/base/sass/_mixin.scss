@@ -1,0 +1,204 @@
+// Media query mixin DESKTOP - TABLET - MOBILE
+@mixin media-size($size) {
+  @if $size == mobile {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (min-width: $tablet) and (max-width: $laptop) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+}
+
+// Conver px to rem function
+@function rem($target, $context: $body-font-size) {
+  @return ($target / $context) * 1rem;
+}
+
+// sprite icon mixin
+@mixin icon-img {
+  background-image: url(#{$spriteImage});
+  background-repeat: no-repeat;
+  [dir=rtl] & {
+      background-image: url(#{$spriteImage_rtl});
+  }
+}
+
+// Element border radus
+@mixin border-radius($radius: 1px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// typography font family
+@mixin font-face($family) {
+  @font-face {
+    font-family: $family;
+    src: url("#{$fontPath}/#{$family}.otf") format("opentype"), url("#{$fontPath}/#{$family}.woff2") format("woff2"),
+      url("#{$fontPath}/#{$family}.woff") format("woff");
+  }
+}
+
+@mixin  paragraph-style ($fontFamily,$size,$line,$space) {
+  font-family: $fontFamily;
+  font-size: $size;
+  line-height: $line;
+  letter-spacing: $space;
+}
+
+// Icon font family
+@mixin icon-face($family) {
+  @font-face {
+    font-family: $family;
+    src:url("#{$iconsPath}/#{$family}.woff") format("woff");
+  }
+}
+
+//Multi linguistic forn family
+@each $item, $font in $fonts-map {
+  %#{$item} {
+    @each $lang, $value in $font {
+      &:lang(#{$lang}) {
+        font-family: $value;
+      }
+    }
+  }
+}
+
+// Spacer -- Margin and Padding
+// Example  .m-t-20 - element margin top
+$max: 50;
+$offset: 5;
+@mixin list-loop($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{($i / $body-font-size * 1rem)};
+    }
+    $i: $i + $offset;
+  }
+}
+
+// Border radius
+@mixin rounded($border) {
+  -webkit-border-radius: $border;
+  -moz-border-radius: $border;
+  border-radius: $border;
+}
+
+//Grid gap - Padding between column
+@mixin grid-gap($column-gap) {
+  @supports (display: grid) {
+    grid-gap: rem(0) rem($column-gap);
+  }
+}
+
+//Clear fix
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+//text truncate
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Element center mixin
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Main grid blocker
+@mixin grid($grid-type, $args) {
+  @supports (display: grid) {
+    display: grid;
+    #{$grid-type}: #{$args};
+  }
+}
+
+//UL default style remover
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Element Width and height
+@mixin size($size, $height: $size, $radius: 0) {
+  width: $size;
+  height: $height;
+
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+
+//Content verticle middle
+@mixin content-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//Key frame animation
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// Animation transition
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+  -webkit-transition: $what $time $how;
+  -moz-transition: $what $time $how;
+  -ms-transition: $what $time $how;
+  -o-transition: $what $time $how;
+  transition: $what $time $how;
+}
+
+//Grid gap - padding
+
+@mixin grid-rows($gap, $rows) {
+  grid-template-rows: $rows;
+  @if $gap > 0 {
+    grid-row-gap: $gap;
+  }
+
+  -ms-grid-rows: box-gap($rows, $gap);
+}
+
+// Main container
+@each $keys, $breakpoint in $custom-breakpoints {
+  @media (min-width: $breakpoint) {
+    .kp-container {
+      width: calc(100% - #{$keys * 2});
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+// Full width container
+.fluid-container {
+  width: 100%!important;
+}

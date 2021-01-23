@@ -1,0 +1,42 @@
+// Grid coolumn function
+
+@for $i from 1 through 12 { // 1 to 12 column count
+    .grid-column-#{$i} { // gird column (ex: .column-6) for desktop
+        @include grid(grid-template-columns, repeat(#{$i}, 1fr));
+    }
+    .column-#{$i} { // Auto width flex grid for desktop
+        grid-column: span #{$i};
+    }
+}
+
+@include media-size(tablet) {
+    @for $i from 1 through 12 {
+        .tab-gridcolumn-#{$i} { // gird column (ex: .tab-gridcolumn-6 ) for Tablet
+            @include grid(grid-template-columns, repeat(#{$i}, 1fr));
+        }
+
+        .tabcolumn-#{$i} { // Auto width flex grid for tablet
+            grid-column: span #{$i};
+        }
+    }
+}
+
+@include media-size(mobile) {
+    @for $i from 1 through 12 {
+        .mob-gridcolumn-#{$i} { // gird column (ex: .mob-gridcolumn-6 ) for mobile
+            @include grid(grid-template-columns, repeat(#{$i}, 1fr));
+        }
+        .mobcolumn-#{$i} { // Auto width flex grid for mobile
+            grid-column: span #{$i};
+        }
+    }
+}
+
+// grid blocker
+// <div class="rows>
+//<div class="column-12 tab-gridcolumn-12 mob-gridcolmn">
+//</div>
+.rows {
+    @include grid(grid-template-columns, repeat(12, 1fr));
+    width: 100%;
+}

@@ -1,0 +1,14 @@
+---
+_footer:
+- Container Layout:
+  - styleName: Column Reverse
+    className: reverse-columns
+_button-variation:
+  - Button:
+  - styleName: Primar Buttom
+    className: primary-btn
+  - styleName: Secondary Button
+    className: secondary-btn   
+
+
+      

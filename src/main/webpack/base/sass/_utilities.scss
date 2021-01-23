@@ -1,0 +1,120 @@
+// Column gap function
+@each $key, $list in $grid-gap {
+    .column-#{$key} {
+        @each $keys, $i in $list {
+            @include media-size(#{$keys}) {
+                grid-gap: #{($i / $body-font-size * 1rem)};
+            }
+        }
+    }
+}
+
+@include list-loop(".m-t-", "margin-top");
+@include list-loop(".m-r-", "margin-right");
+@include list-loop(".m-b-", "margin-bottom");
+@include list-loop(".m-l-", "margin-left");
+@include list-loop(".m-x-", "margin");
+// Paddings
+@include list-loop(".p-t-", "padding-top");
+@include list-loop(".p-r-", "padding-right");
+@include list-loop(".p-b-", "padding-bottom");
+@include list-loop(".p-l-", "padding-left");
+@include list-loop(".p-x-", "padding");
+
+@include media-size(tablet) {
+    @include list-loop(".tab-m-t-", "margin-top");
+    @include list-loop(".tab-m-r-tab", "margin-right");
+    @include list-loop(".tab-m-b-tab", "margin-bottom");
+    @include list-loop(".tab-m-l-tab", "margin-left");
+    @include list-loop(".tab-m-x-tab", "margin");
+    // Paddings
+    @include list-loop(".tab-p-t-tab", "padding-top");
+    @include list-loop(".tab-p-r-tab", "padding-right");
+    @include list-loop(".tab-p-b-tab", "padding-bottom");
+    @include list-loop(".tab-p-l-tab", "padding-left");
+    @include list-loop(".tab-p-x-tab", "padding");
+}
+@include media-size(tablet) {
+    @include list-loop(".mob-m-t-", "margin-top");
+    @include list-loop(".mob-m-r-tab", "margin-right");
+    @include list-loop(".mob-m-b-tab", "margin-bottom");
+    @include list-loop(".mob-m-l-tab", "margin-left");
+    @include list-loop(".mob-m-x-tab", "margin");
+    // Paddings
+    @include list-loop(".mob-p-t-tab", "padding-top");
+    @include list-loop(".mob-p-r-tab", "padding-right");
+    @include list-loop(".mob-p-b-tab", "padding-bottom");
+    @include list-loop(".mob-p-l-tab", "padding-left");
+    @include list-loop(".mob-p-x-tab", "padding");
+}
+// text center
+.text-center {
+    text-align: center;
+}
+// Element float left
+.left {
+    float: left;
+}
+// Element float right
+.right {
+    float: right;
+}
+// Element display none
+.d-none {
+    display: none !important;
+}
+
+.d-inline {
+    display: inline-block;
+}
+.clear-fix {
+    @include clearfix();
+}
+// Element center
+.center-block {
+    @include center-block;
+}
+
+.full-width{
+    width: 100%;
+}
+
+// text truncate class
+.text-truncate {
+    @include text-overflow;
+}
+//Column reverse
+.reverse-column {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.blue-border {
+    border: 1px solid $box-border-color;
+}
+.gray-bg {
+    background-color: $gray-light;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+.content-middle {
+    @include content-middle;
+}
+hr {
+    background-color: $prl-gray;
+    height: 1px;
+    border: none;
+    margin-top: rem(15);
+    margin-bottom: rem(15);
+&.kp-dark-divider {
+    background-color: $dark-thin-bg;
+}
+
+&.kp-thick-divider {
+    height: rem($thick-divider);
+}
+}
+//text color for hint section
+.text-muted {
+    color: $text-muted!important;
+}

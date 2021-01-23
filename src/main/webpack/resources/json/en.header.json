@@ -1,0 +1,36 @@
+{
+    "navitems": [
+     {
+        "label": "Learn",
+        "link": "learn",
+        "target": "_self"
+    },
+    {
+        "label": "Shop plan",
+        "link": "shop-plan",
+        "target": "_self"
+    },
+    {
+        "label": "Doctor & Location",
+        "link": "doctor-location",
+        "target": "_self"
+    },
+    {
+        "label": "Health Wellness",
+        "link": "health-wellness",
+        "target": "_self"
+    },
+    {
+        "label": "Get Care",
+        "link": "get-care",
+        "target": "_self"
+    },
+    {
+        "label": "New Member",
+        "link": "new-member",
+        "target": "_self"
+    }
+
+
+]
+}
